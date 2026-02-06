@@ -5,25 +5,78 @@ export default function Footer() {
         className="
           max-w-screen-2xl mx-auto
           px-[6vw]
-          py-[8vh]
+          pt-[10vh]
+          pb-[6vh]
           border-t border-textDark/30
-          text-center
         "
       >
-        {/* NAME */}
-        <p className="font-serif text-textDark text-[clamp(1.1rem,1.4vw,1.3rem)] mb-2">
-          Dr. Maya Reynolds, PsyD
-        </p>
+        {/* TOP ROW */}
+        <div
+          className="
+            flex flex-col
+            md:flex-row
+            justify-between
+            items-start
+            gap-[6vh]
+            mb-[6vh]
+          "
+        >
+          {/* LEFT — NAME & LOCATION */}
+          <div className="max-w-[28rem]">
+            <p
+              className="
+                font-serif
+                text-textDark
+                text-[clamp(1.2rem,1.6vw,1.4rem)]
+                mb-[1vh]
+              "
+            >
+              Dr. Maya Reynolds, PsyD
+            </p>
 
-        {/* LOCATION */}
-        <p className="text-textDark/70 text-[clamp(0.9rem,1vw,1rem)] mb-4">
-          Licensed Clinical Psychologist · Santa Monica, California
-        </p>
+            <p
+              className="
+                text-textDark/70
+                text-[clamp(0.95rem,1.1vw,1.05rem)]
+                leading-relaxed
+              "
+            >
+              Licensed Clinical Psychologist
+              <br />
+              Santa Monica, California
+            </p>
+          </div>
 
-        {/* COPYRIGHT */}
-        <p className="text-textDark/60 text-[0.85rem]">
-          © {new Date().getFullYear()} Dr. Maya Reynolds. All rights reserved.
-        </p>
+          {/* RIGHT — PRACTICE DETAILS */}
+          <div className="max-w-[28rem] md:text-right">
+            <p
+              className="
+                text-textDark/70
+                text-[clamp(0.95rem,1.1vw,1.05rem)]
+                leading-relaxed
+              "
+            >
+              In-person therapy in Santa Monica
+              <br />
+              Secure telehealth sessions available
+              <br />
+              for adults across California
+            </p>
+          </div>
+        </div>
+
+        {/* BOTTOM — COPYRIGHT */}
+        <div className="text-center">
+          <p
+            className="
+              text-textDark/50
+              text-[0.8rem]
+              tracking-wide
+            "
+          >
+            © {new Date().getFullYear()} Dr. Maya Reynolds, PsyD · All rights reserved
+          </p>
+        </div>
       </div>
     </footer>
   );

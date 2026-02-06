@@ -1,6 +1,27 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const images = [
+  "/images/hero1.png",
+  "/images/hero2.png",
+  "/images/hero3.png",
+];
 
 export default function Hero() {
+  const [index, setIndex] = useState(0);
+
+  // Auto change every 2s (plus animation time)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 2500); // 2s hold + 0.5s slide
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="bg-cream min-h-[90vh] flex items-center">
       <div
@@ -13,7 +34,7 @@ export default function Hero() {
           items-center
         "
       >
-        {/* IMAGE */}
+        {/* IMAGE SLIDER */}
         <div className="flex justify-center lg:justify-start">
           <div
             className="
@@ -26,13 +47,24 @@ export default function Hero() {
               shadow-[0_40px_80px_rgba(0,0,0,0.08)]
             "
           >
-            <Image
-              src="/images/maya-hero.jpg"   // ← replace with actual image
-              alt="Dr. Maya Reynolds, PsyD – Santa Monica therapist"
-              fill
-              priority
-              className="object-cover"
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ x: "100%", opacity: 0 }}
+                animate={{ x: "0%", opacity: 1 }}
+                exit={{ x: "-100%", opacity: 0 }}
+                transition={{ duration: 0.1, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={images[index]}
+                  alt="Dr. Maya Reynolds, PsyD – Santa Monica therapist"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
 
@@ -70,19 +102,16 @@ export default function Hero() {
             <button
               className="
                 inline-flex items-center gap-3
-                bg-olive
-                text-cream
+                bg-olive text-cream
                 px-[clamp(2.4rem,3vw,3.2rem)]
                 py-[clamp(1rem,1.6vh,1.2rem)]
                 text-[clamp(0.9rem,1vw,1rem)]
                 tracking-widest uppercase
-                shadow-md
                 hover:bg-textDark
                 transition
               "
             >
-              Schedule a Consultation
-              <span aria-hidden>→</span>
+              Schedule a Consultation →
             </button>
           </div>
         </div>

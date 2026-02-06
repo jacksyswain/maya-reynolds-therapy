@@ -79,7 +79,7 @@ export default function Intro() {
         <div className="w-full lg:w-1/2 min-h-[50vh] lg:min-h-[100vh] relative">
           <div className="absolute inset-0">
             <Image
-              src="/images/intro.jpg"   // ← replace with real image
+              src="/images/intro.png"   // ← replace with real image
               alt="Calm, grounding therapy space in Santa Monica"
               fill
               className="object-cover"

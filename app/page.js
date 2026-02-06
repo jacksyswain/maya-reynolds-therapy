@@ -7,6 +7,7 @@ import About from "../components/About";
 import FAQ from "../components/FAQ";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
+import Office from "../components/Office";
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <Intro />
       <Specialties />
       <About />
+      <Office />
       <FAQ />
       <CTA />
       <Footer />
