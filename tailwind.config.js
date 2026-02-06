@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cream: "#f7f4ef",
-        sand: "#dfd5c5",
-        extra: "#ece6dc",
-        olive: "#6b705c",
-        textDark: "#2f2f2f",
+        cream: "#F1F4F3",    
+        sand: "#D8CFC4",     
+        extra: "#E6ECEA",    
+        olive: "#7A8F85",    
+        textDark: "#1F2933", 
       },
       fontFamily: {
         serif: ["Playfair Display", "serif"],

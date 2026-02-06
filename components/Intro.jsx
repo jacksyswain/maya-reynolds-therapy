@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 export default function Intro() {
   return (
     <section className="bg-extra">
       <div className="min-h-[100vh] flex flex-col-reverse lg:flex-row">
-        
+
         {/* TEXT — LEFT ON DESKTOP */}
         <div
           className="
@@ -74,7 +76,21 @@ export default function Intro() {
         </div>
 
         {/* IMAGE — RIGHT ON DESKTOP / TOP ON MOBILE */}
-        <div className="w-full lg:w-1/2 min-h-[50vh] lg:min-h-[100vh] bg-sand" />
+        <div className="w-full lg:w-1/2 min-h-[50vh] lg:min-h-[100vh] relative">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/intro.jpg"   // ← replace with real image
+              alt="Calm, grounding therapy space in Santa Monica"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* OPTIONAL subtle overlay for contrast */}
+          <div className="absolute inset-0 bg-sand/20" />
+        </div>
+
       </div>
     </section>
   );

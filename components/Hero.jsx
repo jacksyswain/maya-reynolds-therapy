@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="bg-cream min-h-[90vh] flex items-center">
@@ -15,23 +17,34 @@ export default function Hero() {
         <div className="flex justify-center lg:justify-start">
           <div
             className="
-              w-[clamp(16rem,30vw,28rem)]
+              relative
+              w-[clamp(18rem,32vw,30rem)]
               aspect-[3/4]
-              bg-sand
               rounded-t-[999px]
+              overflow-hidden
+              bg-sand
+              shadow-[0_40px_80px_rgba(0,0,0,0.08)]
             "
-          />
+          >
+            <Image
+              src="/images/maya-hero.jpg"   // ← replace with actual image
+              alt="Dr. Maya Reynolds, PsyD – Santa Monica therapist"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
         </div>
 
         {/* CONTENT */}
-        <div className="text-center lg:text-left max-w-[40rem]">
+        <div className="text-center lg:text-left max-w-[42rem]">
           <h1
             className="
               font-serif
               text-textDark
-              text-[clamp(2.6rem,5vw,4.8rem)]
-              leading-[1.1]
-              mb-[4vh]
+              text-[clamp(2.8rem,5.5vw,5.2rem)]
+              leading-[1.05]
+              mb-[3vh]
             "
           >
             Therapy for Anxiety, Trauma & Burnout
@@ -41,28 +54,30 @@ export default function Hero() {
 
           <p
             className="
-              text-textDark/80
-              text-[clamp(1.05rem,1.3vw,1.25rem)]
+              text-textDark/75
+              text-[clamp(1.05rem,1.35vw,1.3rem)]
               leading-relaxed
               mb-[5vh]
             "
           >
-            Support for adults who feel overwhelmed, emotionally exhausted,
-            or stuck in cycles of stress and overthinking. A grounded,
-            collaborative approach to help you feel more regulated and at ease.
+            Compassionate therapy for adults who feel overwhelmed, emotionally
+            exhausted, or stuck in cycles of stress and overthinking.
+            Sessions available in-person in Santa Monica and via secure
+            telehealth across California.
           </p>
 
           <div className="flex justify-center lg:justify-start">
             <button
               className="
                 inline-flex items-center gap-3
-                border border-olive
-                text-olive
-                px-[clamp(2.2rem,3vw,3rem)]
-                py-[clamp(0.9rem,1.4vh,1.1rem)]
+                bg-olive
+                text-cream
+                px-[clamp(2.4rem,3vw,3.2rem)]
+                py-[clamp(1rem,1.6vh,1.2rem)]
                 text-[clamp(0.9rem,1vw,1rem)]
                 tracking-widest uppercase
-                hover:bg-olive hover:text-cream
+                shadow-md
+                hover:bg-textDark
                 transition
               "
             >
