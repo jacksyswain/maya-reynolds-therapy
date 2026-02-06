@@ -19,9 +19,12 @@ export default function Specialties() {
         {/* CARDS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[3vw]">
 
-          {/* ANXIETY */}
+          {/* CARD 1 — ANXIETY */}
           <div
             className="
+              group
+              relative
+              overflow-hidden
               bg-extra
               p-[3.2vw]
               min-h-[52vh]
@@ -29,22 +32,62 @@ export default function Specialties() {
               border border-textDark/30
             "
           >
-            <h3 className="font-serif text-[clamp(1.7rem,2.2vw,2rem)] mb-[3vh]">
-              Anxiety & Panic
-            </h3>
+            {/* HOVER FILL */}
+            <div
+              className="
+                absolute inset-0
+                bg-olive
+                origin-bottom
+                scale-y-0
+                group-hover:scale-y-100
+                transition-transform
+                duration-[1000ms]
+                ease-out
+                z-0
+              "
+            />
 
-            <p className="text-textDark/80 leading-relaxed text-[clamp(1.05rem,1.25vw,1.2rem)]">
-              Chronic worry, racing thoughts, panic symptoms, and constant
-              tension can leave you feeling on edge and exhausted. Therapy
-              focuses on understanding both emotional patterns and nervous
-              system responses, helping you feel calmer and more grounded
-              in daily life.
-            </p>
+            {/* CONTENT */}
+            <div className="relative z-10">
+              <h3
+                className="
+                  font-serif
+                  text-[clamp(1.7rem,2.2vw,2rem)]
+                  mb-[3vh]
+                  text-textDark
+                  group-hover:text-cream
+                  transition-colors
+                  duration-300
+                "
+              >
+                Anxiety & Panic
+              </h3>
+
+              <p
+                className="
+                  text-textDark/80
+                  leading-relaxed
+                  text-[clamp(1.05rem,1.25vw,1.2rem)]
+                  group-hover:text-cream/90
+                  transition-colors
+                  duration-300
+                "
+              >
+                Chronic worry, racing thoughts, panic symptoms, and constant
+                tension can leave you feeling on edge and exhausted. Therapy
+                focuses on understanding both emotional patterns and nervous
+                system responses, helping you feel calmer and more grounded
+                in daily life.
+              </p>
+            </div>
           </div>
 
-          {/* TRAUMA */}
+          {/* CARD 2 — TRAUMA */}
           <div
             className="
+              group
+              relative
+              overflow-hidden
               bg-extra
               p-[3.2vw]
               min-h-[52vh]
@@ -52,21 +95,62 @@ export default function Specialties() {
               border border-textDark/30
             "
           >
-            <h3 className="font-serif text-[clamp(1.7rem,2.2vw,2rem)] mb-[3vh]">
-              Trauma & Recovery
-            </h3>
+            {/* HOVER FILL */}
+            <div
+              className="
+                absolute inset-0
+                bg-olive
+                origin-bottom
+                scale-y-0
+                group-hover:scale-y-100
+                transition-transform
+                duration-[1000ms]
+                ease-out
+                z-0
+              "
+            />
 
-            <p className="text-textDark/80 leading-relaxed text-[clamp(1.05rem,1.25vw,1.2rem)]">
-              Past experiences—whether single events or long-standing patterns—
-              can continue to affect your sense of safety, relationships, and
-              self-trust. Trauma work is paced carefully, with an emphasis on
-              stabilization, regulation, and restoring a sense of control.
-            </p>
+            {/* CONTENT */}
+            <div className="relative z-10">
+              <h3
+                className="
+                  font-serif
+                  text-[clamp(1.7rem,2.2vw,2rem)]
+                  mb-[3vh]
+                  text-textDark
+                  group-hover:text-cream
+                  transition-colors
+                  duration-300
+                "
+              >
+                Trauma & Recovery
+              </h3>
+
+              <p
+                className="
+                  text-textDark/80
+                  leading-relaxed
+                  text-[clamp(1.05rem,1.25vw,1.2rem)]
+                  group-hover:text-cream/90
+                  transition-colors
+                  duration-300
+                "
+              >
+                Past experiences—whether single events or long-standing
+                patterns—can continue to affect your sense of safety,
+                relationships, and self-trust. Trauma work is paced carefully,
+                with an emphasis on stabilization, regulation, and restoring
+                a sense of control.
+              </p>
+            </div>
           </div>
 
-          {/* BURNOUT */}
+          {/* CARD 3 — BURNOUT */}
           <div
             className="
+              group
+              relative
+              overflow-hidden
               bg-extra
               p-[3.2vw]
               min-h-[52vh]
@@ -74,16 +158,53 @@ export default function Specialties() {
               border border-textDark/30
             "
           >
-            <h3 className="font-serif text-[clamp(1.7rem,2.2vw,2rem)] mb-[3vh]">
-              Burnout & High Pressure
-            </h3>
+            {/* HOVER FILL */}
+            <div
+              className="
+                absolute inset-0
+                bg-olive
+                origin-bottom
+                scale-y-0
+                group-hover:scale-y-100
+                transition-transform
+                duration-[1000ms]
+                ease-out
+                z-0
+              "
+            />
 
-            <p className="text-textDark/80 leading-relaxed text-[clamp(1.05rem,1.25vw,1.2rem)]">
-              Long-term stress, perfectionism, and professional pressure can
-              lead to emotional exhaustion and disconnection. Therapy becomes
-              a space to slow down, reconnect with yourself, and develop more
-              sustainable ways of living and working.
-            </p>
+            {/* CONTENT */}
+            <div className="relative z-10">
+              <h3
+                className="
+                  font-serif
+                  text-[clamp(1.7rem,2.2vw,2rem)]
+                  mb-[3vh]
+                  text-textDark
+                  group-hover:text-cream
+                  transition-colors
+                  duration-300
+                "
+              >
+                Burnout & High Pressure
+              </h3>
+
+              <p
+                className="
+                  text-textDark/80
+                  leading-relaxed
+                  text-[clamp(1.05rem,1.25vw,1.2rem)]
+                  group-hover:text-cream/90
+                  transition-colors
+                  duration-300
+                "
+              >
+                Long-term stress, perfectionism, and professional pressure can
+                lead to emotional exhaustion and disconnection. Therapy becomes
+                a space to slow down, reconnect with yourself, and develop more
+                sustainable ways of living and working.
+              </p>
+            </div>
           </div>
 
         </div>

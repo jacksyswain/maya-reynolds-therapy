@@ -5,21 +5,21 @@ export default function About() {
         className="
           max-w-screen-2xl mx-auto
           px-[6vw]
-          py-[14vh]
+          py-[15vh]
           grid grid-cols-1 lg:grid-cols-2
-          gap-[8vh] lg:gap-[6vw]
+          gap-[9vh] lg:gap-[7vw]
           items-center
         "
       >
         {/* TEXT CONTENT */}
-        <div className="max-w-[44rem]">
+        <div className="max-w-[46rem]">
           <h2
             className="
               font-serif
               text-textDark
-              text-[clamp(2.2rem,3.5vw,3rem)]
-              mb-[4vh]
+              text-[clamp(2.4rem,3.8vw,3.2rem)]
               leading-tight
+              mb-[4.5vh]
             "
           >
             Meet Dr. Maya Reynolds, PsyD
@@ -27,10 +27,10 @@ export default function About() {
 
           <p
             className="
-              text-textDark/80
-              text-[clamp(1.05rem,1.3vw,1.25rem)]
+              text-textDark/85
+              text-[clamp(1.1rem,1.35vw,1.3rem)]
               leading-relaxed
-              mb-[3vh]
+              mb-[3.5vh]
             "
           >
             I’m a licensed clinical psychologist based in Santa Monica,
@@ -44,7 +44,7 @@ export default function About() {
               text-textDark/80
               text-[clamp(1.05rem,1.3vw,1.25rem)]
               leading-relaxed
-              mb-[3vh]
+              mb-[3.5vh]
             "
           >
             Many of the people I work with are high-achieving, thoughtful, and
@@ -67,7 +67,7 @@ export default function About() {
           </p>
         </div>
 
-        {/* IMAGE */}
+        {/* IMAGE — TOP & BOTTOM ARCHED */}
         <div className="flex justify-center lg:justify-end">
           <div
             className="
@@ -75,6 +75,8 @@ export default function About() {
               aspect-[3/4]
               bg-sand
               rounded-t-[999px]
+              rounded-b-[999px]
+              shadow-[0_40px_80px_rgba(0,0,0,0.08)]
             "
           />
         </div>
