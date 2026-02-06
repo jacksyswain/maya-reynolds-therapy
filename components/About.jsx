@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section className="bg-cream">
@@ -71,14 +73,24 @@ export default function About() {
         <div className="flex justify-center lg:justify-end">
           <div
             className="
+              relative
               w-[clamp(18rem,32vw,28rem)]
               aspect-[3/4]
-              bg-sand
               rounded-t-[999px]
               rounded-b-[999px]
+              overflow-hidden
               shadow-[0_40px_80px_rgba(0,0,0,0.08)]
+              bg-sand
             "
-          />
+          >
+            <Image
+              src="/images/Dr.Maya.png"
+              alt="Dr. Maya Reynolds"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 28rem, 80vw"
+            />
+          </div>
         </div>
       </div>
     </section>
