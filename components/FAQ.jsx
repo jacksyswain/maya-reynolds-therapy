@@ -26,7 +26,7 @@ export default function FAQ() {
         className="
           max-w-screen-2xl mx-auto
           px-[6vw]
-          py-[12vh]
+          py-[14vh]
         "
       >
         {/* HEADING */}
@@ -34,74 +34,103 @@ export default function FAQ() {
           className="
             font-serif
             text-textDark
-            text-[clamp(2.2rem,3.5vw,3rem)]
-            mb-[8vh]
             text-center
+            text-[clamp(2.3rem,3.8vw,3.2rem)]
+            mb-[10vh]
           "
         >
           Frequently Asked Questions
         </h2>
 
         {/* FAQ LIST */}
-        <div className="max-w-[52rem] mx-auto border-t border-textDark/30">
-          {faqs.map((item, i) => (
-            <div
-              key={i}
-              className="border-b border-textDark/30"
-            >
-              {/* QUESTION */}
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
+        <div className="max-w-[56rem] mx-auto border-t border-textDark/30">
+          {faqs.map((item, i) => {
+            const isOpen = open === i;
+
+            return (
+              <div
+                key={i}
                 className="
-                  w-full
-                  py-[4vh]
-                  flex items-start
-                  gap-[2rem]
-                  text-left
+                  relative
+                  overflow-hidden
+                  border-b border-textDark/30
                 "
               >
-                {/* PLUS / MINUS ICON */}
-                <span
-                  className="
-                    text-[2.4rem]
-                    leading-none
-                    text-textDark
-                    font-light
-                    mt-[-0.2rem]
-                  "
-                >
-                  {open === i ? "−" : "+"}
-                </span>
+                {/* LEFT → RIGHT FILL */}
+                <div
+                  className={`
+                    absolute inset-0
+                    bg-olive
+                    origin-left
+                    scale-x-0
+                    transition-transform
+                    duration-[1000ms]
+                    ease-out
+                    z-0
+                    ${isOpen ? "scale-x-100" : ""}
+                  `}
+                />
 
-                {/* QUESTION TEXT */}
-                <span
-                  className="
-                    font-serif
-                    text-textDark
-                    text-[clamp(1.6rem,2.4vw,2rem)]
-                    leading-snug
-                  "
-                >
-                  {item.q}
-                </span>
-              </button>
-
-              {/* ANSWER */}
-              {open === i && (
-                <div className="pl-[4.4rem] pb-[4vh]">
-                  <p
+                {/* CONTENT */}
+                <div className="relative z-10">
+                  {/* QUESTION */}
+                  <button
+                    onClick={() => setOpen(isOpen ? null : i)}
                     className="
-                      text-textDark/80
-                      text-[clamp(1.05rem,1.3vw,1.2rem)]
-                      leading-relaxed
+                      w-full
+                      py-[4vh]
+                      flex items-start
+                      gap-[2rem]
+                      text-left
                     "
                   >
-                    {item.a}
-                  </p>
+                    {/* ICON */}
+                    <span
+                      className={`
+                        text-[2.6rem]
+                        leading-none
+                        font-light
+                        transition-colors
+                        duration-300
+                        ${isOpen ? "text-cream" : "text-textDark"}
+                      `}
+                    >
+                      {isOpen ? "−" : "+"}
+                    </span>
+
+                    {/* QUESTION TEXT */}
+                    <span
+                      className={`
+                        font-serif
+                        text-[clamp(1.6rem,2.4vw,2rem)]
+                        leading-snug
+                        transition-colors
+                        duration-300
+                        ${isOpen ? "text-cream" : "text-textDark"}
+                      `}
+                    >
+                      {item.q}
+                    </span>
+                  </button>
+
+                  {/* ANSWER */}
+                  {isOpen && (
+                    <div className="pl-[4.6rem] pb-[4vh]">
+                      <p
+                        className="
+                          text-cream/90
+                          text-[clamp(1.05rem,1.3vw,1.2rem)]
+                          leading-relaxed
+                        "
+                      >
+                        {item.a}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
