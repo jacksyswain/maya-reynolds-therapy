@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+/**
+ * 👉 Just change images here
+ */
 const images = [
   "/images/hero1.png",
   "/images/hero2.png",
@@ -13,11 +16,11 @@ const images = [
 export default function Hero() {
   const [index, setIndex] = useState(0);
 
-  // Auto change every 2s (plus animation time)
+  // Auto change image every 2.5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 2500); // 2s hold + 0.5s slide
+    }, 2500);
 
     return () => clearInterval(timer);
   }, []);
@@ -34,7 +37,7 @@ export default function Hero() {
           items-center
         "
       >
-        {/* IMAGE SLIDER */}
+        {/* ================= IMAGE SLIDER ================= */}
         <div className="flex justify-center lg:justify-start">
           <div
             className="
@@ -47,20 +50,20 @@ export default function Hero() {
               shadow-[0_40px_80px_rgba(0,0,0,0.08)]
             "
           >
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
               <motion.div
                 key={index}
-                initial={{ x: "100%", opacity: 0 }}
-                animate={{ x: "0%", opacity: 1 }}
-                exit={{ x: "-100%", opacity: 0 }}
-                transition={{ duration: 0.1, ease: "easeInOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
                 <Image
                   src={images[index]}
-                  alt="Dr. Maya Reynolds, PsyD – Santa Monica therapist"
+                  alt="Therapist portrait"
                   fill
-                  className="object-cover"
+                  className="object-cover bg-sand"
                   priority
                 />
               </motion.div>
@@ -68,7 +71,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* CONTENT */}
+        {/* ================= CONTENT ================= */}
         <div className="text-center lg:text-left max-w-[42rem]">
           <h1
             className="
@@ -92,10 +95,10 @@ export default function Hero() {
               mb-[5vh]
             "
           >
-            Compassionate therapy for adults who feel overwhelmed, emotionally
-            exhausted, or stuck in cycles of stress and overthinking.
-            Sessions available in-person in Santa Monica and via secure
-            telehealth across California.
+            Compassionate therapy for adults who feel overwhelmed,
+            emotionally exhausted, or stuck in cycles of stress and
+            overthinking. Sessions available in-person in Santa Monica
+            and via secure telehealth across California.
           </p>
 
           <div className="flex justify-center lg:justify-start">
