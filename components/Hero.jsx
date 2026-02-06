@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="min-h-[90vh] flex items-center">
+    <section className="bg-cream min-h-[90vh] flex items-center">
       <div
         className="
           max-w-screen-2xl mx-auto
@@ -17,7 +17,7 @@ export default function Hero() {
             className="
               w-[clamp(16rem,30vw,28rem)]
               aspect-[3/4]
-              bg-accent
+              bg-sand
               rounded-t-[999px]
             "
           />
@@ -27,7 +27,8 @@ export default function Hero() {
         <div className="text-center lg:text-left max-w-[40rem]">
           <h1
             className="
-              font-serif text-primary
+              font-serif
+              text-textDark
               text-[clamp(2.6rem,5vw,4.8rem)]
               leading-[1.1]
               mb-[4vh]
@@ -47,21 +48,21 @@ export default function Hero() {
             "
           >
             Support for adults who feel overwhelmed, emotionally exhausted,
-            or stuck in patterns of stress and overthinking. A grounded,
-            collaborative approach to help you feel more regulated and
-            connected.
+            or stuck in cycles of stress and overthinking. A grounded,
+            collaborative approach to help you feel more regulated and at ease.
           </p>
 
           <div className="flex justify-center lg:justify-start">
             <button
               className="
                 inline-flex items-center gap-3
-                border border-primary
+                border border-olive
+                text-olive
                 px-[clamp(2.2rem,3vw,3rem)]
                 py-[clamp(0.9rem,1.4vh,1.1rem)]
                 text-[clamp(0.9rem,1vw,1rem)]
                 tracking-widest uppercase
-                hover:bg-primary hover:text-white
+                hover:bg-olive hover:text-cream
                 transition
               "
             >
